@@ -9,6 +9,6 @@ public class ModTerrablender {
 
     // this could probably belong to registry but whatever
     public static void init() {
-        Regions.register(new ModOverworldRegion(OVERWORLD, 3));
+        Regions.register(new ModOverworldRegion(OVERWORLD, 1));
     }
 }

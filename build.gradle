@@ -23,7 +23,6 @@ repositories {
             includeGroup("software.bernie.geckolib")
         }
     }
-    maven { url = 'https://maven.minecraftforge.net/' }
 }
 
 dependencies {
@@ -49,7 +48,6 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
     implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
-    implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablender_version}"
 }
 
 

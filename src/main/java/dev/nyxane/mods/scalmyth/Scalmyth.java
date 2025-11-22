@@ -4,7 +4,6 @@ import dev.nyxane.mods.scalmyth.api.ScalmythAPI;
 
 import dev.nyxane.mods.scalmyth.client.ScalmythRenderer;
 import dev.nyxane.mods.scalmyth.registry.*;
-import dev.nyxane.mods.scalmyth.worldgen.biome.ModTerrablender;
 import dev.nyxane.mods.scalmyth.worldgen.biome.surface.ModSurfaceRules;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
@@ -17,7 +16,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import terrablender.api.SurfaceRuleManager;
 
 @Mod(ScalmythAPI.MOD_ID)
 public class Scalmyth
@@ -29,7 +27,6 @@ public class Scalmyth
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModDataComponents.register(modEventBus);
-        ModTerrablender.init();
     }
 
 
@@ -44,11 +41,6 @@ public class Scalmyth
         public static void onCommonSetup(FMLCommonSetupEvent event){
             event.enqueueWork(() -> {
                 ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.BLOOD_FLOWER.getId(), ModBlocks.POTTED_BLOOD_FLOWER);
-                SurfaceRuleManager.addSurfaceRules(
-                        SurfaceRuleManager.RuleCategory.OVERWORLD,
-                        ScalmythAPI.MOD_ID,
-                        ModSurfaceRules.makeRules()
-                );
             });
         }
     }
